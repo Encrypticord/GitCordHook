@@ -12,19 +12,19 @@ Install the dependancies with `npm i` and then open the config.json file. Once y
 
 ## Software Configuration
 
-### Port: number
+#### Port: number
 
 This is the port your webhook bridge will be running on.
 
-### trust_proxy: true | false
+#### trust_proxy: true | false
 
 If you are hosting this service behind a proxy setup in something like Apache or NGINX, you'll want to set this to be true. If you aren't, setting it to false is recommended for security.
 
-### secret: string
+#### secret: string
 
 This is where you setup your security. You will enter this in both the config here and in the GitHub webhook setup, which will be what authenticates GitHub in your bridge.
 
-### pathings: array
+#### pathings: array
 
 Within this array you will setup all of your webhook paths and Discord webhook links. Two examples are provided. For the webhook_path, it should look something like `/webhook` or `/webhook/servicename`. What you name the paths is up to you, but start with a `/` and don't end with one. Then, in discord_webhook_url you will place the link for your Discord webhook.
 
