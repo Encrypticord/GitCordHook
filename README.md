@@ -34,3 +34,6 @@ You can have as many of these pairs as you want, so long as each path has a webh
 
 In order to ensure people don't find the url of your webhook bridge and start creating fake events, you need to setup a secret. The secret can be whatever you'd like, but longer and more random secrets tend to be more secure. Whatever they are, both the bridge config file and the GitHub webhook configuration need to have the identical secret.
 
+## Currently Supported Events
+
+- push
