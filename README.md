@@ -20,6 +20,12 @@ This is the port your webhook bridge will be running on.
 
 If you are hosting this service behind a proxy setup in something like Apache or NGINX, you'll want to set this to be true. If you aren't, setting it to false is recommended for security.
 
+#### use_https: true | false
+
+If you are hosting this service under a domain name, and you are able to get the certificates necessary, you can run this service on HTTPS. This is HIGHLY recommended, as HTTPS is much more secure than just HTTP.
+
+Place the content of your certificates in the template files already existing, and enable `use_https`. The service will automatically start on HTTPS when it boots next.
+
 #### secret: string
 
 In Development
@@ -41,3 +47,13 @@ In order to ensure people don't find the url of your webhook bridge and start cr
 - push
 - workflow runs (Functioning - To Be Improved)
 - workflow jobs (Functioning - To Be Improved)
+
+## Building
+
+If you would like to develop your own version of GitCordHook (following the licensing and copyright agreement), or just build the JavaScript on your own, you can use the already setup command.
+
+Ensure that you have TypeScript installed globally. To do this, run `npm i typescript -g`. Once you have TypeScript installed globally, run `npm run build` and the service will automatically build. Once built, you can start your newly built version with `node .` and it will run.
+
+
+
+*Copyright © 2024 Encrypticord Services. All rights reserved.*
