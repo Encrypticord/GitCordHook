@@ -22,7 +22,9 @@ If you are hosting this service behind a proxy setup in something like Apache or
 
 #### secret: string
 
-This is where you setup your security. You will enter this in both the config here and in the GitHub webhook setup, which will be what authenticates GitHub in your bridge.
+In Development
+
+~~This is where you setup your security. You will enter this in both the config here and in the GitHub webhook setup, which will be what authenticates GitHub in your bridge.~~
 
 #### pathings: array
 
@@ -36,4 +38,6 @@ In order to ensure people don't find the url of your webhook bridge and start cr
 
 ## Currently Supported Events
 
-- push
+- push              | Fully Functioning
+- workflow runs     | Functioning - To Be Improved
+- workflow jobs     | Functioning - To Be Improved

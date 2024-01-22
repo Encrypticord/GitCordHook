@@ -1,0 +1,19 @@
+{
+    "port": 3000,
+    "trust_proxy": false,
+    "use_https": false,
+    "pathings": [
+        {
+            "webhook_path": "/webhook/redirect_1",
+            "discord_webhook_url": "http://discord_webhook.link/2"
+        },
+        {
+            "webhook_path": "/webhook/redirect_2",
+            "discord_webhook_url": "http://discord_webhook.link/2"
+        },
+        {
+            "webhook_path": "/redirect_3",
+            "discord_webhook_url": "http://discord_webhook.link/3"
+        }
+    ]
+}
