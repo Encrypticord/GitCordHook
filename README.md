@@ -54,6 +54,8 @@ If you would like to develop your own version of GitCordHook (following the lice
 
 Ensure that you have TypeScript installed globally. To do this, run `npm i typescript -g`. Once you have TypeScript installed globally, run `npm run build` and the service will automatically build. Once built, you can start your newly built version with `node .` and it will run.
 
-
+<br>
+<br>
+<br>
 
 *Copyright © 2024 Encrypticord Services. All rights reserved.*
