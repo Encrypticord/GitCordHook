@@ -1,4 +1,4 @@
-# GitHubDiscordHook
+# GitCordHook
 
 ## Introduction
 
@@ -38,6 +38,6 @@ In order to ensure people don't find the url of your webhook bridge and start cr
 
 ## Currently Supported Events
 
-- push              | Fully Functioning
-- workflow runs     | Functioning - To Be Improved
-- workflow jobs     | Functioning - To Be Improved
+- push
+- workflow runs (Functioning - To Be Improved)
+- workflow jobs (Functioning - To Be Improved)
