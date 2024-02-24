@@ -7,17 +7,13 @@ class PushParser {
         this._functions = _functions;
     }
     async push(req, pathing) {
-        if (req.body.pusher) {
-            let push = await this.pushParser(req, pathing, 'push');
-            return push;
-        }
-        else {
-            return responses_1.responses.requestError;
-        }
+        let push = await this.pushParser(req, pathing, 'push');
+        return push;
     }
     async pushParser(req, pathing, type) {
+        let body = req.body;
         let commits = this._functions.commitsParser(req);
-        let constructedEmbed = this._functions.messageConstructor(`${req.body.pusher.name} pushed to [${req.body.repository.full_name}](${req.body.repository.html_url}) ([Compare Changes](${req.body.compare}))`, `${commits}`);
+        let constructedEmbed = this._functions.messageConstructor(`${body.pusher.name} pushed to [${body.repository.full_name}](${body.repository.html_url}) ([Compare Changes](${body.compare}))`, `${commits}`);
         return this._functions.webhookPusher(constructedEmbed, pathing).then((statusCode) => {
             return statusCode;
         }).catch((error) => {

@@ -61,13 +61,11 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const app = express();
 const https = require('https');
-//Declarations
 app.use(cors());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.set('trust proxy', true);
-//Main
 main();
 async function main() {
     if (fs.existsSync(`${__dirname}/config.json`)) {
@@ -120,17 +118,20 @@ const jobParser = new jobParser_1.JobParser(functionsHandler);
 const pushParser = new pushParser_1.PushParser(functionsHandler);
 const runParser = new runParser_1.RunParser(functionsHandler);
 async function GitHubParser(req, pathing) {
-    let body = req.body;
     let headers = req.headers;
     let event = headers['x-github-event'];
     if (event) {
+        console.log(`${colors_1.colors.yellow}${pathing.webhook_path}/${event}${colors_1.colors.reset}`);
         switch (event) {
             case 'workflow_run':
-                runParser.run(req, pathing);
+                let runParse = await runParser.run(req, pathing);
+                return runParse;
             case 'workflow_job':
-                jobParser.job(req, pathing);
+                let jobParse = await jobParser.job(req, pathing);
+                return jobParse;
             case 'push':
-                pushParser.push(req, pathing);
+                let pushParse = await pushParser.push(req, pathing);
+                return pushParse;
             default:
                 return responses_1.responses.requestError;
         }
